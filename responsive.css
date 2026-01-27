@@ -1,0 +1,480 @@
+/* ==========================================
+   RESPONSIVE STYLES - ADDITIONAL FILE
+   Ye file apni existing style.css ke SAATH use karein
+   Direct add karo, koi conflict nahi hoga!
+   ========================================== */
+
+/* ==========================================
+   DEVICE-SPECIFIC RESPONSIVE DESIGN
+   Automatic sizing for all devices
+   ========================================== */
+
+/* Extra Small Devices - Small Phones (320px - 479px) */
+@media (max-width: 479px) {
+  body::before {
+    font-size: 1.2rem !important;
+    word-spacing: 1.5rem !important;
+    line-height: 2.5rem !important;
+  }
+  
+  .progress-bar {
+    width: 90% !important;
+    height: 6px !important;
+    top: 15px !important;
+  }
+  
+  .container {
+    width: 95% !important;
+    padding: 10px !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 200px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .question {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .subtext {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .btn {
+    min-width: 200px !important;
+    font-size: 0.9rem !important;
+    padding: 12px 25px !important;
+  }
+  
+  .result-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .result-text {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .product-card {
+    padding: 1.2rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .product-badge {
+    font-size: 0.75rem !important;
+    padding: 6px 15px !important;
+    top: -12px !important;
+    right: 20px !important;
+  }
+  
+  .product-title {
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .product-features li {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .urgency-text {
+    font-size: 0.85rem !important;
+    padding: 10px !important;
+  }
+  
+  .buy-btn {
+    font-size: 1rem !important;
+    padding: 14px 35px !important;
+  }
+  
+  .guarantee {
+    font-size: 0.8rem !important;
+  }
+  
+  .button-container {
+    gap: 0.8rem !important;
+  }
+}
+
+/* Small Devices - Modern Phones (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  body::before {
+    font-size: 1.5rem !important;
+    word-spacing: 2rem !important;
+    line-height: 3rem !important;
+  }
+  
+  .progress-bar {
+    width: 85% !important;
+    height: 7px !important;
+  }
+  
+  .container {
+    width: 90% !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 240px !important;
+  }
+  
+  .question {
+    font-size: 1.8rem !important;
+  }
+  
+  .subtext {
+    font-size: 1rem !important;
+  }
+  
+  .btn {
+    min-width: 220px !important;
+    font-size: 0.95rem !important;
+    padding: 13px 28px !important;
+  }
+  
+  .result-title {
+    font-size: 2rem !important;
+  }
+  
+  .result-text {
+    font-size: 1.05rem !important;
+  }
+  
+  .product-card {
+    padding: 1.5rem !important;
+  }
+  
+  .product-title {
+    font-size: 1.4rem !important;
+  }
+  
+  .product-features li {
+    font-size: 1rem !important;
+  }
+  
+  .buy-btn {
+    font-size: 1.05rem !important;
+    padding: 15px 38px !important;
+  }
+}
+
+/* Medium Devices - Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .progress-bar {
+    width: 75% !important;
+  }
+  
+  .container {
+    width: 85% !important;
+    max-width: 650px !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 260px !important;
+  }
+  
+  .question {
+    font-size: 2.2rem !important;
+  }
+  
+  .subtext {
+    font-size: 1.05rem !important;
+  }
+  
+  .btn {
+    min-width: 250px !important;
+    font-size: 1.05rem !important;
+    padding: 15px 35px !important;
+  }
+  
+  .result-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .result-text {
+    font-size: 1.15rem !important;
+  }
+  
+  .product-card {
+    padding: 2rem !important;
+  }
+  
+  .product-title {
+    font-size: 1.7rem !important;
+  }
+  
+  .buy-btn {
+    font-size: 1.15rem !important;
+    padding: 17px 45px !important;
+  }
+}
+
+/* Large Devices - Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 700px !important;
+  }
+  
+  .question {
+    font-size: 2.6rem !important;
+  }
+  
+  .result-title {
+    font-size: 2.8rem !important;
+  }
+  
+  .product-card {
+    padding: 2.3rem !important;
+  }
+}
+
+/* Extra Large Devices - Large Desktops (1200px+) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 750px !important;
+  }
+  
+  .question {
+    font-size: 2.8rem !important;
+  }
+  
+  .result-title {
+    font-size: 3rem !important;
+  }
+  
+  .product-card {
+    padding: 2.5rem !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 300px !important;
+  }
+}
+
+/* ==========================================
+   LANDSCAPE MODE OPTIMIZATION
+   Phone/Tablet sideways me perfect
+   ========================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .container {
+    padding-top: 60px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  .progress-bar {
+    top: 10px !important;
+    height: 5px !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 180px !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .question {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .subtext {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .button-container {
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .btn {
+    padding: 10px 25px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .product-card {
+    padding: 1rem !important;
+  }
+  
+  .product-features {
+    margin: 1rem 0 !important;
+  }
+  
+  .product-features li {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* ==========================================
+   TOUCH DEVICE OPTIMIZATION
+   Mobile/Tablet pe buttons bigger
+   ========================================== */
+
+@media (pointer: coarse) {
+  .btn {
+    min-height: 44px !important;
+    padding: 15px 35px !important;
+  }
+  
+  .buy-btn {
+    min-height: 48px !important;
+    padding: 18px 45px !important;
+  }
+  
+  .no-love-btn {
+    min-width: 250px !important;
+  }
+}
+
+/* ==========================================
+   HIGH RESOLUTION DISPLAYS
+   Retina, 4K screens
+   ========================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .local-gif,
+  .gif-result {
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  .product-card {
+    box-shadow: 0 15px 45px rgba(255, 107, 129, 0.35) !important;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY - REDUCED MOTION
+   Motion sickness users ke liye
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before {
+    animation: none !important;
+  }
+}
+
+/* ==========================================
+   PRINT STYLES
+   Agar koi print kare
+   ========================================== */
+
+@media print {
+  body::before {
+    display: none !important;
+  }
+  
+  .progress-bar {
+    display: none !important;
+  }
+  
+  video {
+    display: none !important;
+  }
+  
+  .btn {
+    border: 2px solid #ff6b81 !important;
+  }
+  
+  .product-card {
+    page-break-inside: avoid !important;
+  }
+}
+
+/* ==========================================
+   EXTRA MOBILE FIXES
+   Common mobile issues solved
+   ========================================== */
+
+/* Prevent zoom on input focus (iOS) */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  /* Better tap targets */
+  a,
+  button,
+  .btn {
+    -webkit-tap-highlight-color: rgba(255, 107, 129, 0.3);
+  }
+  
+  /* Smooth scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ==========================================
+   VERY SMALL SCREENS
+   320px aur usse kam
+   ========================================== */
+
+@media (max-width: 374px) {
+  .question {
+    font-size: 1.3rem !important;
+  }
+  
+  .btn {
+    min-width: 180px !important;
+    font-size: 0.85rem !important;
+    padding: 11px 22px !important;
+  }
+  
+  .product-title {
+    font-size: 1.2rem !important;
+  }
+  
+  .buy-btn {
+    font-size: 0.95rem !important;
+    padding: 13px 30px !important;
+  }
+  
+  .local-gif,
+  .gif-result {
+    max-width: 180px !important;
+  }
+}
+
+/* ==========================================
+   IPHONE X, 11, 12 NOTCH SUPPORT
+   Safe area ke liye
+   ========================================== */
+
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left)) !important;
+    padding-right: max(0px, env(safe-area-inset-right)) !important;
+  }
+  
+  .container {
+    padding-bottom: max(20px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* ==========================================
+   END OF RESPONSIVE STYLES
+   ========================================== */
