@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Find The Perfect Gift 💝</title>
+</head>
+<body>
+    <!-- Question 1: Relationship Status -->
+    <div class="question-container container active" id="question1">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 25%"></div>
+        </div>
+        <video class="local-gif" src="Reply_me_love.mp4" autoplay muted loop></video>
+        <h2 class="question">Do you have a boyfriend or girlfriend?</h2>
+        <div class="button-container">
+            <button class="choice-btn btn" data-next="question2" data-gender="boyfriend">Yes, a boyfriend 💙</button>
+            <button class="choice-btn btn" data-next="question2" data-gender="girlfriend">Yes, a girlfriend 💖</button>
+            <button class="choice-btn btn" data-next="single">No, I'm single 💔</button>
+        </div>
+    </div>
+
+    <!-- Question 2: Do you love them? -->
+    <div class="question-container container" id="question2">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%"></div>
+        </div>
+        <video class="local-gif" src="Love_me.mp4" autoplay muted loop></video>
+        <h2 class="question">Do you love <span id="genderPronoun">them</span>?</h2>
+        <div class="button-container">
+            <button class="choice-btn btn" data-next="question3">Yes, deeply ❤️</button>
+            <button class="choice-btn btn" data-next="question3">Yes, so much! 💕</button>
+            <button class="no-love-btn btn">Not really...</button>
+        </div>
+    </div>
+
+    <!-- Question 3: Are you sure? -->
+    <div class="question-container container" id="question3">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%"></div>
+        </div>
+        <video class="local-gif" src="Reply_me_love.mp4" autoplay muted loop></video>
+        <h2 class="question">Are you sure you love <span id="genderPronoun2">them</span>?</h2>
+        <p class="subtext">This is important! 💭</p>
+        <div class="button-container">
+            <button class="choice-btn btn" data-next="result">Absolutely! 100% ✨</button>
+            <button class="choice-btn btn" data-next="result">Yes, I'm certain! 💯</button>
+        </div>
+    </div>
+
+    <!-- Single Path -->
+    <div class="question-container container" id="single">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+        </div>
+        <video class="local-gif" src="Love_me.mp4" autoplay muted loop></video>
+        <h2 class="question">That's okay! 💪</h2>
+        <p class="subtext">Self-love is the best love. Get yourself something special! 🌟</p>
+        <div class="button-container single-cta">
+            <a href="https://valentinesvault.shop/products/2pcs-glow-in-the-dark-lover-bracelets-with-a-pair-of-beleket-bff-bracelets" class="buy-btn" target="_blank">
+                Treat Yourself! 💝
+            </a>
+        </div>
+    </div>
+
+    <!-- Final Result -->
+    <div class="result-container container" id="result">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+        </div>
+        <video class="gif-result" src="Love_me.mp4" autoplay loop></video>
+        <h2 class="result-title">Then Show It! 💕</h2>
+        <p class="result-text">
+            Nothing says "I love you" like a gift that glows in the dark! 
+            These matching bracelets are the perfect way to keep your love shining bright. ✨
+        </p>
+        
+        <!-- Product Showcase -->
+        <div class="product-card">
+            <div class="product-badge">🔥 LIMITED STOCK</div>
+            <h3 class="product-title">Glow in the Dark Lover Bracelets</h3>
+            <ul class="product-features">
+                <li>💫 Glows beautifully in the dark</li>
+                <li>💝 Set of 2 matching bracelets</li>
+                <li>🎁 Perfect Valentine's gift</li>
+                <li>✨ Shows you care 24/7</li>
+            </ul>
+            <div class="urgency-text">⏰ Valentine's Day is coming! Order now!</div>
+            <a href="https://valentinesvault.shop/products/2pcs-glow-in-the-dark-lover-bracelets-with-a-pair-of-beleket-bff-bracelets" class="buy-btn pulse" target="_blank">
+                🛒 Buy Now & Make Them Smile!
+            </a>
+            <p class="guarantee">💯 30-Day Money Back Guarantee</p>
+        </div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="cssload-main">
+        <div class="cssload-heart">
+            <span class="cssload-heartL"></span>
+            <span class="cssload-heartR"></span>
+            <span class="cssload-square"></span>
+        </div>
+        <div class="cssload-shadow"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
