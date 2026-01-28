@@ -1,171 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Is Your Relationship Boring? | Date Night Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Date Night Quiz | Couple Game</title>
 </head>
 <body>
 
-<div id="device-info" style="display: none;"></div>
-
-<div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-</div>
-
-<!-- STEP 1 -->
-<div class="step-container active" id="step1">
-    <div class="floating-hearts">
-        <span>💕</span><span>💖</span><span>💗</span><span>💝</span><span>💘</span>
-    </div>
-    <div class="content-card">
-        <div class="badge">🔥 50,000+ Couples Already Playing</div>
-        <h1 class="main-heading">Are You & Your Partner <br/><span class="highlight">Secretly Bored?</span></h1>
-        <p class="sub-text">Take this 10-second quiz to find out if your relationship needs the <strong>Date Night Revolution</strong> ⚡</p>
-        
-        <div class="quiz-option" onclick="nextStep(2)">
-            <span class="emoji">😴</span>
-            <span>"Dinner & Netflix again..."</span>
-        </div>
-        <div class="quiz-option" onclick="nextStep(2)">
-            <span class="emoji">🤔</span>
-            <span>"We never try new things"</span>
-        </div>
-        <div class="quiz-option" onclick="nextStep(2)">
-            <span class="emoji">💔</span>
-            <span>"The spark is fading..."</span>
-        </div>
-        <div class="quiz-option highlight-option" onclick="nextStep(2)">
-            <span class="emoji">🔥</span>
-            <span>"We want excitement!"</span>
-        </div>
+<div class="question-container container" id="questionBox">
+    <video class="local-gif" src="Reply me love.mp4" autoplay muted loop playsinline></video>
+    <h2 class="question" id="questionText">Is Your Date Night Getting Boring? 🥱</h2>
+    <p class="sub-text" id="subText">Try something new tonight!</p>
+    <div class="button-container">
+        <button class="yes-btn btn js-yes-btn">Yes! Help us 😍</button>
+        <button class="no-btn btn js-no-btn" id="noBtn">No, we're fine</button>
     </div>
 </div>
 
-<!-- STEP 2 -->
-<div class="step-container" id="step2">
-    <div class="content-card question-card">
-        <div class="urgency-badge">⏱️ Only 3 minutes left!</div>
-        <h2 class="question-text">Would you try something <span class="highlight">spontaneous</span> tonight to save your relationship?</h2>
-        <p class="micro-copy">Over 89% of couples who tried this felt closer within 1 week*</p>
-        
-        <div class="button-wrapper">
-            <button class="yes-btn-main" onclick="nextStep(3)">
-                <span class="btn-text">YES! Save My Date Nights 🔥</span>
-                <span class="btn-shine"></span>
-            </button>
-            
-            <button class="no-btn-evade" id="evadeBtn" ontouchstart="moveButton()" onmouseenter="moveButton()">
-                <span>No, I like boring dates</span>
-            </button>
-        </div>
-        
-        <div class="trust-badges">
-            <span>🛡️ 30-Day Guarantee</span>
-            <span>🚚 Free Shipping</span>
-            <span>⭐ 4.9/5 Rating</span>
-        </div>
-    </div>
+<div class="result-container container" id="resultBox" style="display: none;">
+    <video class="gif-result" src="Love me.mp4" autoplay loop playsinline></video>
+    <h2 id="resultText">Perfect Match Found! 🎁</h2>
+    <p class="result-sub">Get 50% Off Date Night Cards</p>
+    <a href="https://www.cjdropshipping.com/product/date-night-creative-couple-game-card-scratch-card-game-p-1764833008378449920.html" class="buy-btn">Get Your Game Now 🔥</a>
 </div>
 
-<!-- STEP 3 -->
-<div class="step-container" id="step3">
-    <div class="loader-container">
-        <div class="heart-loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="loading-text">
-            <h3>Analyzing your compatibility...</h3>
-            <p id="loading-status">Checking date night potential 💕</p>
-        </div>
-        <div class="social-proof-float">
-            <div class="proof-item">🔥 Priya & Rahul just ordered!</div>
-            <div class="proof-item">💕 New order from Mumbai</div>
-        </div>
+<div class="cssload-main" id="loader" style="display: none;">
+    <div class="cssload-heart">
+        <span class="cssload-heartL"></span>
+        <span class="cssload-heartR"></span>
+        <span class="cssload-square"></span>
     </div>
-</div>
-
-<!-- STEP 4 -->
-<div class="step-container result-page" id="step4">
-    <div class="result-content">
-        <div class="success-badge">🎯 PERFECT MATCH FOUND!</div>
-        
-        <div class="product-showcase">
-            <div class="product-visual">
-                <div class="scratch-demo">
-                    <div class="scratch-card">
-                        <div class="scratch-overlay">SCRATCH ME! 👆</div>
-                        <div class="hidden-content">
-                            <span class="reveal-emoji">🌟</span>
-                            <p>Midnight Ice Cream Challenge!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-info">
-                <h2 class="result-heading">Your Relationship Needs:<br/><span class="product-name">The Date Night Mystery Box 🎁</span></h2>
-                
-                <ul class="benefits-list">
-                    <li>✨ <strong>40 Scratch-Off Dates</strong> - No more "You decide!"</li>
-                    <li>🔒 <strong>No Take-Backs Rule</strong> - Commit to adventure</li>
-                    <li>💝 <strong>Rebuild Connection</strong> - Feel like newlyweds</li>
-                    <li>🎲 <strong>Mystery Icons</strong> - Budget & time hints</li>
-                </ul>
-                
-                <div class="price-section">
-                    <div class="old-price">₹1,999</div>
-                    <div class="new-price">
-                        <span class="currency">₹</span>999
-                        <span class="period">only</span>
-                    </div>
-                    <div class="save-tag">🔥 Save 50% (Valentine Special)</div>
-                </div>
-                
-                <div class="scarcity-bar">
-                    <div class="stock-text">⚠️ Only <span class="stock-count" id="stockCount">7</span> boxes left!</div>
-                    <div class="progress-bar-stock">
-                        <div class="progress-fill" style="width: 15%"></div>
-                    </div>
-                </div>
-                
-                <a href="https://www.cjdropshipping.com/product/date-night-creative-couple-game-card-scratch-card-game-p-1764833008378449920.html" class="cta-button" onclick="convertEvent()">
-                    <span class="btn-main-text">🛒 GET MY DATE BOX NOW</span>
-                    <span class="btn-sub-text">30-Day Money Back Guarantee</span>
-                </a>
-                
-                <div class="guarantee-box">
-                    <div class="guarantee-icon">🛡️</div>
-                    <div class="guarantee-text">
-                        <strong>Risk-Free Promise:</strong> If you don't feel closer after 3 dates, full refund. No questions.
-                    </div>
-                </div>
-                
-                <div class="testimonial-snack">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"We stopped going on dates. This changed everything! Last night we did the 'Blindfold Cooking' card and laughed for 3 hours straight!" <br/><strong>- Aditi S., Verified Buyer</strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="exit-popup" id="exitPopup">
-        <div class="popup-content">
-            <h3>🎁 WAIT! Don't Lose The Spark!</h3>
-            <p>Use code <strong>SPARK50</strong> for extra 10% off!</p>
-            <button class="stay-btn" onclick="closePopup()">Claim My Discount</button>
-        </div>
-    </div>
-</div>
-
-<div class="footer-trust">
-    <p>🔒 SSL Secure Checkout &nbsp;|&nbsp; 🚚 Ships in 24 Hours &nbsp;|&nbsp; 💬 24/7 Support</p>
+    <div class="cssload-shadow"></div>
 </div>
 
 <script src="script.js"></script>
