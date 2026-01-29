@@ -1,40 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Date Night Quiz | Couple Game</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>A Question For You... 💭</title>
 </head>
 <body>
-
-<div class="question-container container" id="questionBox">
-    <video class="local-gif" src="Reply me love.mp4" autoplay muted loop playsinline></video>
-    <h2 class="question" id="questionText">Is Your Date Night Getting Boring? 🥱</h2>
-    <p class="sub-text" id="subText">Try something new tonight!</p>
-    <div class="button-container">
-        <button class="yes-btn btn js-yes-btn">Yes! Help us 😍</button>
-        <button class="no-btn btn js-no-btn" id="noBtn">No, we're fine</button>
+    <!-- Question 1: Relationship Status -->
+    <div class="screen active" id="screen1">
+        <div class="content-wrapper">
+            <div class="emoji-float">💭</div>
+            <h1 class="main-question">Quick question...</h1>
+            <p class="sub-text">Be honest! 😏</p>
+            <div class="button-group">
+                <button class="choice-btn" data-next="2" data-value="bf-gf">I have a BF/GF ❤️</button>
+                <button class="choice-btn" data-next="3" data-value="ex">I have an Ex 💔</button>
+                <button class="choice-btn" data-next="4" data-value="both">Both! 😅</button>
+                <button class="choice-btn sad-btn" data-next="5" data-value="single">Single & Ready to Mingle 🥲</button>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="result-container container" id="resultBox" style="display: none;">
-    <video class="gif-result" src="Love me.mp4" autoplay loop playsinline></video>
-    <h2 id="resultText">Perfect Match Found! 🎁</h2>
-    <p class="result-sub">Get 50% Off Date Night Cards</p>
-    <a href="https://www.cjdropshipping.com/product/date-night-creative-couple-game-card-scratch-card-game-p-1764833008378449920.html" class="buy-btn">Get Your Game Now 🔥</a>
-</div>
-
-<div class="cssload-main" id="loader" style="display: none;">
-    <div class="cssload-heart">
-        <span class="cssload-heartL"></span>
-        <span class="cssload-heartR"></span>
-        <span class="cssload-square"></span>
+    <!-- Question 2: For BF/GF -->
+    <div class="screen" id="screen2">
+        <div class="content-wrapper">
+            <div class="emoji-float">💝</div>
+            <h1 class="main-question">When was the last time you surprised them?</h1>
+            <p class="sub-text">Relationships need effort! 🌹</p>
+            <div class="button-group">
+                <button class="choice-btn" data-next="6" data-value="recently">Recently! 😊</button>
+                <button class="choice-btn" data-next="6" data-value="been-a-while">It's been a while... 😅</button>
+                <button class="choice-btn guilt-btn" data-next="6" data-value="cant-remember">I can't remember 😳</button>
+            </div>
+        </div>
     </div>
-    <div class="cssload-shadow"></div>
-</div>
 
-<script src="script.js"></script>
+    <!-- Question 3: For Ex -->
+    <div class="screen" id="screen3">
+        <div class="content-wrapper">
+            <div class="emoji-float">😏</div>
+            <h1 class="main-question">How do you feel about your Ex?</h1>
+            <p class="sub-text">No judgment here! 😈</p>
+            <div class="button-group">
+                <button class="choice-btn" data-next="7" data-value="moved-on">Moved on completely ✌️</button>
+                <button class="choice-btn" data-next="7" data-value="complicated">It's complicated 😐</button>
+                <button class="choice-btn revenge-btn" data-next="7" data-value="deserve-surprise">They deserve a "surprise" 🖕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 4: For Both -->
+    <div class="screen" id="screen4">
+        <div class="content-wrapper">
+            <div class="emoji-float">🎭</div>
+            <h1 class="main-question">Wow, living life on the edge! 😏</h1>
+            <p class="sub-text">So which one deserves more attention?</p>
+            <div class="button-group">
+                <button class="choice-btn" data-next="6" data-value="current">My current one ❤️</button>
+                <button class="choice-btn" data-next="7" data-value="ex-first">Let me handle my Ex first 😤</button>
+                <button class="choice-btn special-btn" data-next="8" data-value="both-products">Both need something! 🎁</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 5: Single -->
+    <div class="screen" id="screen5">
+        <div class="content-wrapper">
+            <div class="emoji-float">🕊️</div>
+            <h1 class="main-question">Don't worry, your time will come! 💪</h1>
+            <p class="sub-text">Meanwhile, got any Ex you wanna troll? 😏</p>
+            <div class="button-group">
+                <button class="choice-btn" data-next="7" data-value="yes-ex">Actually, yes! 😈</button>
+                <button class="choice-btn" data-next="9" data-value="no-ex">Nah, I'm good ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Screen: Date Card -->
+    <div class="screen" id="screen6">
+        <div class="content-wrapper product-screen">
+            <div class="emoji-float">🎁</div>
+            <h1 class="main-question">Perfect! They'll LOVE this! 😍</h1>
+            <p class="emotion-trigger">Make them feel special with something they'll never forget! 💕</p>
+            
+            <div class="product-card">
+                <div class="product-badge">💝 Recommended For You</div>
+                <h2 class="product-name">Romantic Date Card Box</h2>
+                <p class="product-desc">A beautifully crafted surprise box with 52 date ideas - one for every week of the year! Perfect for creating memories together. ❤️</p>
+                <div class="urgency-text">⚡ Only 7 left in stock!</div>
+                
+                <!-- PRODUCT LINK SECTION - LINE 95-96 -->
+                <!-- Replace # with your actual product URL -->
+                <a href="#" class="buy-btn pulse-animation" id="dateCardBuyBtn">
+                    💝 Get The Date Card Box Now!
+                </a>
+            </div>
+            
+            <p class="guarantee-text">✓ 100% Happiness Guaranteed | ✓ Fast Delivery</p>
+        </div>
+    </div>
+
+    <!-- Product Screen: Middle Finger Box -->
+    <div class="screen" id="screen7">
+        <div class="content-wrapper product-screen">
+            <div class="emoji-float">🖕</div>
+            <h1 class="main-question">Oh, they DEFINITELY deserve this! 😏</h1>
+            <p class="emotion-trigger">Send them a message they won't forget! 💀</p>
+            
+            <div class="product-card revenge-card">
+                <div class="product-badge revenge-badge">🔥 Bestseller</div>
+                <h2 class="product-name">The "Special Surprise" Box 🖕</h2>
+                <p class="product-desc">Anonymous delivery. Premium packaging. Their address, your revenge. The ultimate "thank you for the memories" gift! 😈</p>
+                <div class="urgency-text">⚡ Flying off the shelves - Order now!</div>
+                
+                <!-- PRODUCT LINK SECTION - LINE 118-119 -->
+                <!-- Replace # with your actual product URL -->
+                <a href="#" class="buy-btn revenge-buy pulse-animation" id="middleFingerBuyBtn">
+                    🖕 Send The Message!
+                </a>
+            </div>
+            
+            <p class="guarantee-text">✓ 100% Anonymous | ✓ Discreet Packaging</p>
+        </div>
+    </div>
+
+    <!-- Product Screen: Both Products -->
+    <div class="screen" id="screen8">
+        <div class="content-wrapper product-screen both-products">
+            <div class="emoji-float">🎭</div>
+            <h1 class="main-question">You absolute legend! 🔥</h1>
+            <p class="emotion-trigger">Handle both situations like a boss! 💪</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">💝 For Your Present</div>
+                    <h3 class="product-name-small">Romantic Date Card</h3>
+                    <p class="product-desc-small">Show them they're special! ❤️</p>
+                    
+                    <!-- PRODUCT LINK SECTION - LINE 144-145 -->
+                    <!-- Replace # with your actual product URL -->
+                    <a href="#" class="buy-btn buy-btn-small pulse-animation">
+                        Get Date Card 💝
+                    </a>
+                </div>
+                
+                <div class="product-card revenge-card">
+                    <div class="product-badge revenge-badge">🖕 For Your Past</div>
+                    <h3 class="product-name-small">"Special" Gift Box</h3>
+                    <p class="product-desc-small">Closure, delivered! 😏</p>
+                    
+                    <!-- PRODUCT LINK SECTION - LINE 157-158 -->
+                    <!-- Replace # with your actual product URL -->
+                    <a href="#" class="buy-btn revenge-buy buy-btn-small pulse-animation">
+                        Get Revenge Box 🖕
+                    </a>
+                </div>
+            </div>
+            
+            <div class="combo-offer">
+                <p class="combo-text">💥 Buy Both & Save 20%!</p>
+                
+                <!-- COMBO PRODUCT LINK SECTION - LINE 168-169 -->
+                <!-- Replace # with your combo/bundle product URL -->
+                <a href="#" class="buy-btn combo-btn pulse-animation" id="comboBuyBtn">
+                    🎁 Get The Combo Deal!
+                </a>
+            </div>
+            
+            <p class="guarantee-text">✓ Fast Delivery | ✓ 100% Satisfaction Guaranteed</p>
+        </div>
+    </div>
+
+    <!-- Exit Screen -->
+    <div class="screen" id="screen9">
+        <div class="content-wrapper">
+            <div class="emoji-float">✨</div>
+            <h1 class="main-question">Fair enough! 😊</h1>
+            <p class="sub-text">But if you change your mind...</p>
+            <div class="button-group">
+                <button class="choice-btn" onclick="location.reload()">Start Over 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heart Loader -->
+    <div class="cssload-main">
+        <div class="cssload-heart">
+            <span class="cssload-heartL"></span>
+            <span class="cssload-heartR"></span>
+            <span class="cssload-square"></span>
+        </div>
+        <div class="cssload-shadow"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
