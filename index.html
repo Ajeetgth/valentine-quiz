@@ -10,20 +10,23 @@
     <title>A Question For You... 💭</title>
 </head>
 <body>
-    <!-- Question 1: Relationship Status WITH LIVE STATS -->
+    <!-- Question 1: Relationship Status WITH COLLAPSIBLE STATS -->
     <div class="screen active" id="screen1">
         <div class="content-wrapper">
             <div class="emoji-float">💭</div>
             <h1 class="main-question">Quick question...</h1>
             <p class="sub-text">Be honest! 😏</p>
             
-            <!-- ============================================ -->
-            <!-- LIVE STATS DISPLAY - YE NAYA FEATURE HAI -->
-            <!-- ============================================ -->
-            <div class="stats-container">
+            <!-- COLLAPSIBLE STATS BUTTON -->
+            <button class="stats-toggle-btn" id="statsToggle">
+                📊 View Live Stats (<span id="statsCount">2,847</span> people voted)
+            </button>
+            
+            <!-- STATS CONTAINER - INITIALLY HIDDEN -->
+            <div class="stats-container collapsed" id="statsContainer">
                 <div class="stats-header">
                     <span class="live-indicator">🔴 LIVE</span>
-                    <span class="stats-count"><span id="totalVotes">2,847</span> people answered today</span>
+                    <button class="stats-close-btn" id="statsClose">✕</button>
                 </div>
                 
                 <div class="stat-item">
@@ -73,10 +76,23 @@
                     </div>
                     <span class="stat-count-small" id="count-single">427</span>
                 </div>
+                
+                <!-- SHARE SECTION IN STATS -->
+                <div class="share-section">
+                    <p class="share-text">Share with friends! 👇</p>
+                    <div class="share-buttons">
+                        <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">
+                            📱 WhatsApp
+                        </button>
+                        <button class="share-btn twitter-btn" onclick="shareOnTwitter()">
+                            🐦 Twitter
+                        </button>
+                        <button class="share-btn copy-btn" onclick="copyLink()">
+                            🔗 Copy Link
+                        </button>
+                    </div>
+                </div>
             </div>
-            <!-- ============================================ -->
-            <!-- STATS DISPLAY END -->
-            <!-- ============================================ -->
             
             <div class="button-group">
                 <button class="choice-btn" data-next="2" data-value="bf-gf">I have a BF/GF ❤️</button>
@@ -158,9 +174,25 @@
                 <a href="https://valentinesvault.shop/products/date-night-creative-couple-game-card-scratch-card-game" class="buy-btn pulse-animation" id="dateCardBuyBtn">
                     💝 Get The Date Card Box Now!
                 </a>
+                
+                <!-- FUNNY ATTACHMENT MESSAGE -->
+                <div class="funny-attachment">
+                    <p class="attachment-text">⚠️ Warning: May cause excessive smiling, spontaneous hugs, and "Why didn't I do this sooner?" moments! 😅</p>
+                    <p class="attachment-subtext">P.S. - Don't blame us when they get too attached! 😏</p>
+                </div>
             </div>
             
             <p class="guarantee-text">✓ 100% Happiness Guaranteed | ✓ Fast Delivery</p>
+            
+            <!-- SHARE SECTION -->
+            <div class="product-share-section">
+                <p class="share-text">💡 Share this gift idea with friends!</p>
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">📱 WhatsApp</button>
+                    <button class="share-btn twitter-btn" onclick="shareOnTwitter()">🐦 Twitter</button>
+                    <button class="share-btn copy-btn" onclick="copyLink()">🔗 Copy</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -180,9 +212,25 @@
                 <a href="https://valentinesvault.shop/products/out-of-the-box-pop-up-middle-finger-gift-box-creative-desk-home-decor-gifts-middle-finger-novelty-christmas-funny-prank-gift" class="buy-btn revenge-buy pulse-animation" id="middleFingerBuyBtn">
                     🖕 Send The Message!
                 </a>
+                
+                <!-- FUNNY ATTACHMENT MESSAGE -->
+                <div class="funny-attachment revenge-attachment">
+                    <p class="attachment-text">⚠️ Side effects: Extreme satisfaction, uncontrollable laughter, and the sweet taste of karma! 😂</p>
+                    <p class="attachment-subtext">P.S. - They had it coming! No refunds on feelings of victory! 🏆</p>
+                </div>
             </div>
             
             <p class="guarantee-text">✓ 100% Anonymous | ✓ Discreet Packaging</p>
+            
+            <!-- SHARE SECTION -->
+            <div class="product-share-section">
+                <p class="share-text">😈 Your friends need this too! Share it!</p>
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">📱 WhatsApp</button>
+                    <button class="share-btn twitter-btn" onclick="shareOnTwitter()">🐦 Twitter</button>
+                    <button class="share-btn copy-btn" onclick="copyLink()">🔗 Copy</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -221,9 +269,25 @@
                 <a href="https://valentinesvault.shop/products/date-night-creative-couple-game-card-scratch-card-game" class="buy-btn combo-btn pulse-animation" id="comboBuyBtn">
                     🎁 Get The Combo Deal!
                 </a>
+                
+                <!-- FUNNY ATTACHMENT MESSAGE -->
+                <div class="funny-attachment combo-attachment">
+                    <p class="attachment-text">⚠️ Warning: This combo is dangerously effective! Your love life AND revenge game about to be legendary! 🎯</p>
+                    <p class="attachment-subtext">P.S. - Balance is everything! Treat yourself to both! 😎</p>
+                </div>
             </div>
             
             <p class="guarantee-text">✓ Fast Delivery | ✓ 100% Satisfaction Guaranteed</p>
+            
+            <!-- SHARE SECTION -->
+            <div class="product-share-section">
+                <p class="share-text">🔥 This combo is too good not to share!</p>
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">📱 WhatsApp</button>
+                    <button class="share-btn twitter-btn" onclick="shareOnTwitter()">🐦 Twitter</button>
+                    <button class="share-btn copy-btn" onclick="copyLink()">🔗 Copy</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -235,6 +299,16 @@
             <p class="sub-text">But if you change your mind...</p>
             <div class="button-group">
                 <button class="choice-btn" onclick="location.reload()">Start Over 🔄</button>
+            </div>
+            
+            <!-- SHARE EVEN ON EXIT -->
+            <div class="exit-share-section">
+                <p class="share-text">🎁 Share this quiz with friends!</p>
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()">📱 WhatsApp</button>
+                    <button class="share-btn twitter-btn" onclick="shareOnTwitter()">🐦 Twitter</button>
+                    <button class="share-btn copy-btn" onclick="copyLink()">🔗 Copy Link</button>
+                </div>
             </div>
         </div>
     </div>
