@@ -1,4 +1,125 @@
-// User Journey Tracker
+// ============================================
+// LIVE STATS SYSTEM - NAYA FEATURE
+// ============================================
+
+// Initial stats (fake data for trust building)
+let statsData = {
+    total: 2847,
+    'bf-gf': 1196,
+    'ex': 797,
+    'both': 427,
+    'single': 427
+};
+
+// Function to update stats when user clicks
+function updateStats(selectedValue) {
+    // Increase total count
+    statsData.total += 1;
+    
+    // Increase selected option count
+    if (statsData[selectedValue]) {
+        statsData[selectedValue] += 1;
+    }
+    
+    // Calculate new percentages
+    const total = statsData.total;
+    const bfgfPercent = Math.round((statsData['bf-gf'] / total) * 100);
+    const exPercent = Math.round((statsData['ex'] / total) * 100);
+    const bothPercent = Math.round((statsData['both'] / total) * 100);
+    const singlePercent = Math.round((statsData['single'] / total) * 100);
+    
+    // Animate the changes
+    animateStatUpdate('bf-gf', statsData['bf-gf'], bfgfPercent);
+    animateStatUpdate('ex', statsData['ex'], exPercent);
+    animateStatUpdate('both', statsData['both'], bothPercent);
+    animateStatUpdate('single', statsData['single'], singlePercent);
+    
+    // Update total count with animation
+    animateNumber('totalVotes', statsData.total);
+    
+    // Save to localStorage for persistence
+    localStorage.setItem('statsData', JSON.stringify(statsData));
+}
+
+// Animate stat updates
+function animateStatUpdate(type, count, percent) {
+    const countElement = document.getElementById(`count-${type}`);
+    const percentElement = document.getElementById(`percent-${type}`);
+    const barElement = document.getElementById(`bar-${type}`);
+    
+    if (!countElement || !percentElement || !barElement) return;
+    
+    // Animate count
+    animateNumber(`count-${type}`, count);
+    
+    // Animate percentage
+    percentElement.textContent = `${percent}%`;
+    percentElement.style.animation = 'pulse-stat 0.5s ease';
+    
+    // Animate bar width
+    barElement.style.transition = 'width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+    barElement.style.width = `${percent}%`;
+    
+    // Add highlight effect to selected option
+    const statItem = countElement.closest('.stat-item');
+    if (statItem) {
+        statItem.style.animation = 'highlight-stat 1s ease';
+        setTimeout(() => {
+            statItem.style.animation = '';
+        }, 1000);
+    }
+}
+
+// Animate number counting
+function animateNumber(elementId, targetNumber) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const startNumber = parseInt(element.textContent.replace(/,/g, '')) || 0;
+    const duration = 800; // ms
+    const steps = 30;
+    const increment = (targetNumber - startNumber) / steps;
+    const stepDuration = duration / steps;
+    
+    let current = startNumber;
+    let step = 0;
+    
+    const timer = setInterval(() => {
+        step++;
+        current += increment;
+        
+        if (step >= steps) {
+            current = targetNumber;
+            clearInterval(timer);
+        }
+        
+        // Format with comma for thousands
+        element.textContent = Math.floor(current).toLocaleString();
+    }, stepDuration);
+}
+
+// Load stats from localStorage on page load
+function loadStats() {
+    const saved = localStorage.getItem('statsData');
+    if (saved) {
+        statsData = JSON.parse(saved);
+        
+        // Update UI with saved stats
+        document.getElementById('totalVotes').textContent = statsData.total.toLocaleString();
+        
+        const total = statsData.total;
+        ['bf-gf', 'ex', 'both', 'single'].forEach(type => {
+            const percent = Math.round((statsData[type] / total) * 100);
+            document.getElementById(`count-${type}`).textContent = statsData[type].toLocaleString();
+            document.getElementById(`percent-${type}`).textContent = `${percent}%`;
+            document.getElementById(`bar-${type}`).style.width = `${percent}%`;
+        });
+    }
+}
+
+// ============================================
+// USER JOURNEY TRACKER (ORIGINAL CODE)
+// ============================================
 let userJourney = {
     relationshipStatus: null,
     responses: []
@@ -10,6 +131,12 @@ const heartLoader = document.querySelector('.cssload-main');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    // Load saved stats
+    loadStats();
+    
+    // Add random stat changes simulation (makes it feel more real)
+    simulateLiveActivity();
+    
     // Add click handlers to all choice buttons
     const choiceButtons = document.querySelectorAll('.choice-btn');
     
@@ -20,6 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Track user response
             userJourney.responses.push(value);
+            
+            // Update stats if on first screen
+            const currentScreen = document.querySelector('.screen.active');
+            if (currentScreen && currentScreen.id === 'screen1') {
+                updateStats(value);
+            }
             
             // Handle screen transition
             if (nextScreen) {
@@ -41,6 +174,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Track product clicks for analytics
     trackProductClicks();
 });
+
+// Simulate live activity (random stat changes every few seconds)
+function simulateLiveActivity() {
+    setInterval(() => {
+        // Randomly pick a category to increment
+        const categories = ['bf-gf', 'ex', 'both', 'single'];
+        const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+        
+        // Small chance to update (1 in 5 seconds)
+        if (Math.random() < 0.2) {
+            statsData.total += 1;
+            statsData[randomCategory] += 1;
+            
+            // Update UI
+            const total = statsData.total;
+            const percent = Math.round((statsData[randomCategory] / total) * 100);
+            
+            document.getElementById('totalVotes').textContent = statsData.total.toLocaleString();
+            document.getElementById(`count-${randomCategory}`).textContent = statsData[randomCategory].toLocaleString();
+            document.getElementById(`percent-${randomCategory}`).textContent = `${percent}%`;
+            document.getElementById(`bar-${randomCategory}`).style.width = `${percent}%`;
+            
+            // Recalculate all percentages
+            ['bf-gf', 'ex', 'both', 'single'].forEach(type => {
+                const p = Math.round((statsData[type] / total) * 100);
+                document.getElementById(`percent-${type}`).textContent = `${p}%`;
+                document.getElementById(`bar-${type}`).style.width = `${p}%`;
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('statsData', JSON.stringify(statsData));
+        }
+    }, 5000); // Every 5 seconds
+}
 
 // Smooth screen transition with loader
 function transitionToScreen(screenId) {
@@ -152,6 +319,16 @@ style.textContent = `
             transform: translateY(0);
         }
     }
+    
+    @keyframes pulse-stat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); color: #ff6b81; }
+    }
+    
+    @keyframes highlight-stat {
+        0%, 100% { background: transparent; }
+        50% { background: rgba(255, 107, 129, 0.1); }
+    }
 `;
 document.head.appendChild(style);
 
@@ -240,6 +417,7 @@ document.addEventListener('visibilitychange', function() {
 // Console easter egg for developers
 console.log('%c💝 Built with Love & Psychology! 💝', 'color: #ff6b81; font-size: 20px; font-weight: bold;');
 console.log('%cUser Journey:', 'color: #667eea; font-size: 14px;', userJourney);
+console.log('%cLive Stats:', 'color: #00b894; font-size: 14px;', statsData);
 
 // Error handling for product links
 window.addEventListener('error', function(e) {
