@@ -10,12 +10,74 @@
     <title>A Question For You... 💭</title>
 </head>
 <body>
-    <!-- Question 1: Relationship Status -->
+    <!-- Question 1: Relationship Status WITH LIVE STATS -->
     <div class="screen active" id="screen1">
         <div class="content-wrapper">
             <div class="emoji-float">💭</div>
             <h1 class="main-question">Quick question...</h1>
             <p class="sub-text">Be honest! 😏</p>
+            
+            <!-- ============================================ -->
+            <!-- LIVE STATS DISPLAY - YE NAYA FEATURE HAI -->
+            <!-- ============================================ -->
+            <div class="stats-container">
+                <div class="stats-header">
+                    <span class="live-indicator">🔴 LIVE</span>
+                    <span class="stats-count"><span id="totalVotes">2,847</span> people answered today</span>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-label">
+                        <span class="stat-emoji">❤️</span>
+                        <span>In a Relationship</span>
+                    </div>
+                    <div class="stat-bar-container">
+                        <div class="stat-bar" id="bar-bf-gf" style="width: 42%"></div>
+                        <span class="stat-percent" id="percent-bf-gf">42%</span>
+                    </div>
+                    <span class="stat-count-small" id="count-bf-gf">1,196</span>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-label">
+                        <span class="stat-emoji">💔</span>
+                        <span>Have an Ex</span>
+                    </div>
+                    <div class="stat-bar-container">
+                        <div class="stat-bar" id="bar-ex" style="width: 28%"></div>
+                        <span class="stat-percent" id="percent-ex">28%</span>
+                    </div>
+                    <span class="stat-count-small" id="count-ex">797</span>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-label">
+                        <span class="stat-emoji">😅</span>
+                        <span>Both (Complicated!)</span>
+                    </div>
+                    <div class="stat-bar-container">
+                        <div class="stat-bar" id="bar-both" style="width: 15%"></div>
+                        <span class="stat-percent" id="percent-both">15%</span>
+                    </div>
+                    <span class="stat-count-small" id="count-both">427</span>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-label">
+                        <span class="stat-emoji">🥲</span>
+                        <span>Single</span>
+                    </div>
+                    <div class="stat-bar-container">
+                        <div class="stat-bar stat-bar-single" id="bar-single" style="width: 15%"></div>
+                        <span class="stat-percent" id="percent-single">15%</span>
+                    </div>
+                    <span class="stat-count-small" id="count-single">427</span>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <!-- STATS DISPLAY END -->
+            <!-- ============================================ -->
+            
             <div class="button-group">
                 <button class="choice-btn" data-next="2" data-value="bf-gf">I have a BF/GF ❤️</button>
                 <button class="choice-btn" data-next="3" data-value="ex">I have an Ex 💔</button>
@@ -93,8 +155,6 @@
                 <p class="product-desc">A beautifully crafted surprise box with 52 date ideas - one for every week of the year! Perfect for creating memories together. ❤️</p>
                 <div class="urgency-text">⚡ Only 7 left in stock!</div>
                 
-                <!-- PRODUCT LINK SECTION - LINE 95-96 -->
-                <!-- Replace # with your actual product URL -->
                 <a href="https://valentinesvault.shop/products/date-night-creative-couple-game-card-scratch-card-game" class="buy-btn pulse-animation" id="dateCardBuyBtn">
                     💝 Get The Date Card Box Now!
                 </a>
@@ -117,8 +177,6 @@
                 <p class="product-desc">Anonymous delivery. Premium packaging. Their address, your revenge. The ultimate "thank you for the memories" gift! 😈</p>
                 <div class="urgency-text">⚡ Flying off the shelves - Order now!</div>
                 
-                <!-- PRODUCT LINK SECTION - LINE 118-119 -->
-                <!-- Replace # with your actual product URL -->
                 <a href="https://valentinesvault.shop/products/out-of-the-box-pop-up-middle-finger-gift-box-creative-desk-home-decor-gifts-middle-finger-novelty-christmas-funny-prank-gift" class="buy-btn revenge-buy pulse-animation" id="middleFingerBuyBtn">
                     🖕 Send The Message!
                 </a>
@@ -141,8 +199,6 @@
                     <h3 class="product-name-small">Romantic Date Card</h3>
                     <p class="product-desc-small">Show them they're special! ❤️</p>
                     
-                    <!-- PRODUCT LINK SECTION - LINE 144-145 -->
-                    <!-- Replace # with your actual product URL -->
                     <a href="https://valentinesvault.shop/products/date-night-creative-couple-game-card-scratch-card-game" class="buy-btn buy-btn-small pulse-animation">
                         Get Date Card 💝
                     </a>
@@ -153,8 +209,6 @@
                     <h3 class="product-name-small">"Special" Gift Box</h3>
                     <p class="product-desc-small">Closure, delivered! 😏</p>
                     
-                    <!-- PRODUCT LINK SECTION - LINE 157-158 -->
-                    <!-- Replace # with your actual product URL -->
                     <a href="https://valentinesvault.shop/products/out-of-the-box-pop-up-middle-finger-gift-box-creative-desk-home-decor-gifts-middle-finger-novelty-christmas-funny-prank-gift" class="buy-btn revenge-buy buy-btn-small pulse-animation">
                         Get Revenge Box 🖕
                     </a>
@@ -164,8 +218,6 @@
             <div class="combo-offer">
                 <p class="combo-text">💥 Buy Both & Save 20%!</p>
                 
-                <!-- COMBO PRODUCT LINK SECTION - LINE 168-169 -->
-                <!-- Replace # with your combo/bundle product URL -->
                 <a href="https://valentinesvault.shop/products/date-night-creative-couple-game-card-scratch-card-game" class="buy-btn combo-btn pulse-animation" id="comboBuyBtn">
                     🎁 Get The Combo Deal!
                 </a>
